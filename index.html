@@ -2,46 +2,46 @@
     <head>
         <title>Snake Game</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     </head>
     <body>
-        <div class="container">
+        <div class="container" >
+            <div style="margin-top: 10px; display: flex; justify-content: center;">
+                <div style="display: inline-block;">
+                    <button class="btn btn-success btn-lg" onclick="start()" style="margin-top: 10px;">Start Game</button>
+                    <button class="btn btn-primary btn-lg"onclick="reset()" style="margin-top: 10px; margin-left: 20px;">Reset Game</button>
+                </div>
+            </div>
 
+            <div id="board" style="width: 300px; height: 300px; margin: 50px auto;">
+                <canvas id="snakeBoard" style="width: inherit; height: inherit;"></canvas>
+            </div>
+            <div class="arrows">
+                <div class="text-center" style="margin: 20px 0;">
+                    <button class="btn btn-info" onclick="up()" >&uarr;</button>
+                </div>
+
+                <div style="display: flex; flex-direction: row; margin: 20px 0;">
+                    <span style="flex-grow: 1; text-align: center;">
+                        <button class="btn btn-info" onclick="left()">&larr;</button>
+                    </span>
         
-        <div id="board">
-            <canvas id="snakeBoard"></canvas>
-        </div>
-        <div class="arrows">
-            <div onclick="up()">
-                <span style="margin-left: 50%;">
-                    <i class="fa fa-angle-double-up fa-10x"></i>
-                </span>
-                
-            </div>
+                    
+                    <span style="flex-grow: 1; text-align: center;">
+                        <button class="btn btn-info" onclick="right()">&rarr;</button>
+                    </span>
+                </div>
 
-            <div>
-                <span onclick="left()" style="margin-left: 44%;">
-                    <i class="fa fa-angle-double-left fa-10x"></i>
-                </span>
-    
-                
-                <span onclick="right()" style="margin-right: 42%; right: 0; position: absolute;">
-                    <i class="fa fa-angle-double-right fa-10x"></i>
-                </span>
-            </div>
+                <div class="text-center" style="margin: 20px 0;">
+                    <span>
+                        <button class="btn btn-info" onclick="down()">&darr;</button>
+                    </span>
+                </div>
 
-            <div onclick="down()">
-                <span style="margin-left: 50%;">
-                    <i class="fa fa-angle-double-down fa-10x"></i>
-                </span>
             </div>
-            
-            
-            
-            
         </div>
-    </div>
         
         <script src="game.js"></script>
     </body>

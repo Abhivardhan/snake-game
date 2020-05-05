@@ -5,8 +5,9 @@ function init() {
     canvas.height = 1000;
 
     cellSize = 66;
-    score = 5;
+    score = 3;
     game_over = false;
+    isGameRunning = false;
 
     food_img = new Image();
     food_img.src = "resources/apple.png";
@@ -19,7 +20,7 @@ function init() {
     
 
     snake = {
-        snakeLength: 5,
+        snakeLength: 3,
         color: "blue",
         cells: [],
         direction: "right",
@@ -160,5 +161,14 @@ function gameloop() {
 
 init();
 
-let game = setInterval(gameloop, 100);
+function start() { 
+    if(isGameRunning) return; 
+    
+    isGameRunning = true;
+    game = setInterval(gameloop, 200);
+}
+
+function reset() {
+    init();
+}
 
